@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: Gilroy;
+  src: url(./Gilroy-Medium.ttf);
+}
+
+* {
+  font-family: Gilroy;
+}
+
+::selection {
+  color: rgb(221, 154, 38);
+}
+
