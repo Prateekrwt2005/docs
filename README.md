@@ -1,16 +1,69 @@
-# React + Vite
+# Interactive Glassmorphic Docs App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium, interactive drag-and-drop document card manager built with React, Vite, Tailwind CSS, and Framer Motion. 
 
-Currently, two official plugins are available:
+This application provides a playful, high-fidelity user experience featuring fully-persisted CRUD operations, tag customization, search, sorting, markdown formatting, backup export/import, and smooth animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **📂 Free-Form Drag & Drop**: Drag document cards anywhere across your screen. Boundary boxes are handled globally to prevent clipping at screen borders.
+- **🛠️ CRUD Operations**: Create new cards, edit descriptions, toggle tag displays, customize tag labels, and choose status icons.
+- **❌ In-Card Deletion**: Delete documents instantly by clicking the cross badge in the card's footer. Cards animate out using Framer Motion exits.
+- **🎨 5 Presets of Tag Colors**: Style tag bars and top-lit card spotlight highlights in 5 premium HSL colors: Green (Emerald), Blue (Sky), Red (Rose), Yellow (Amber), and Purple (Violet).
+- **🔍 Real-Time Search**: Search for keywords inside document descriptions in real time.
+- **🏷️ Tag Color Filtering**: Filter documents to show only cards matching specific tag colors.
+- **🔽 Custom Sort Dropdown**: Sort cards by **Newest First**, **Oldest First**, **A-Z**, or **Z-A**. Features a custom-designed glassmorphic select list with springs and select indicator dots.
+- **📥 Backup & Restore (JSON)**:
+  - **Export**: Download a backup JSON file containing all card states.
+  - **Import**: Restore backup files instantly via an upload picker.
+- **✍️ Inline Markdown Support**: Format card descriptions using basic markdown shortcuts:
+  - `**bold text**` renders bold text.
+  - `*italic text*` renders italicized text.
+  - Lines starting with `- ` render as bullet lists.
+- **🔔 Animated Toast Alerts**: Sleek spring-loaded notifications slide in at the top-right corner to report document creation, updates, deletions, and backup actions.
+- **💾 LocalStorage Persistence**: Card states, additions, edits, and deletions persist across page reloads.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Core**: React 19.x, JavaScript (ES6+)
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: React Icons (Lucide & FontAwesome presets)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure you have Node.js (version 18+ recommended) installed.
+
+### Installation
+
+1. Clone or download the repository.
+2. Open terminal in the project directory.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running Locally
+
+To start the local development server:
+```bash
+npm run dev
+```
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Building for Production
+
+To compile a highly optimized production bundle:
+```bash
+npm run build
+```
+This builds static assets inside the `dist` folder.

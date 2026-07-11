@@ -7,6 +7,20 @@
 
 * {
   font-family: Gilroy;
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE/Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none !important; /* Chrome, Safari, Opera */
+}
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  width: 100vw;
+  height: 100vh;
 }
 
 ::selection {
