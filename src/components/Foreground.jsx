@@ -128,6 +128,26 @@ function Foreground() {
     });
   };
 
+  // Download document as .txt file
+  const handleDownloadDoc = (doc) => {
+    try {
+      const element = document.createElement("a");
+      const file = new Blob([doc.desc], {type: 'text/plain'});
+      element.href = URL.createObjectURL(file);
+      
+      const firstWords = doc.desc.split(' ').slice(0, 3).join('-').replace(/[^a-zA-Z0-9-]/g, '');
+      element.download = `${firstWords || 'document'}.txt`;
+      
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+      
+      addToast('Downloading document...', 'info');
+    } catch (error) {
+      addToast('Failed to download document', 'danger');
+    }
+  };
+
   // Export JSON backup
   const handleExportJSON = () => {
     try {
@@ -350,6 +370,7 @@ function Foreground() {
                 reference={dragBoundaryRef}
                 onEdit={() => handleOpenEdit(item)}
                 onDelete={() => handleDeleteDoc(item.id)}
+                onDownload={() => handleDownloadDoc(item)}
               />
             ))}
           </AnimatePresence>

@@ -65,7 +65,7 @@ const renderFormattedText = (text) => {
   });
 };
 
-function Card({ data, reference, onEdit, onDelete }) {
+function Card({ data, reference, onEdit, onDelete, onDownload }) {
   const tagColorClass = data.tag?.color ? (tagColorMap[data.tag.color] || 'bg-emerald-600') : 'bg-emerald-600';
 
   return (
@@ -110,18 +110,34 @@ function Card({ data, reference, onEdit, onDelete }) {
       <div className="footer absolute bottom-0 w-full left-0">
         <div className="flex justify-between px-7 py-1.5 mb-3 items-center">
           <h5 className="text-xs font-semibold text-zinc-400">{data.filesize}</h5>
-          <button
-            type="button"
-            onPointerDown={(e) => e.stopPropagation()}
-            onClick={(e) => {
-              e.stopPropagation();
-              onDelete();
-            }}
-            className="w-7 h-7 bg-zinc-800/80 rounded-full flex justify-center items-center hover:bg-white/20 cursor-pointer transition-all border border-white/5 text-white"
-            title="Delete Card"
-          >
-            {data.close ? <IoClose size="1.1em" /> : <LuDownload size=".8em" />}
-          </button>
+          
+          {data.close ? (
+            <button
+              type="button"
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                onDelete();
+              }}
+              className="w-7 h-7 bg-zinc-800/80 hover:bg-rose-950/80 flex justify-center items-center cursor-pointer transition-all border border-white/5 text-zinc-300 hover:text-rose-400"
+              title="Delete Card"
+            >
+              <IoClose size="1.1em" />
+            </button>
+          ) : (
+            <button
+              type="button"
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
+                onDownload();
+              }}
+              className="w-7 h-7 bg-zinc-800/80 hover:bg-white/20 flex justify-center items-center cursor-pointer transition-all border border-white/5 text-zinc-300 hover:text-white"
+              title="Download Document"
+            >
+              <LuDownload size=".8em" />
+            </button>
+          )}
         </div>
 
         {data.tag?.isOpen && (

@@ -1,5 +1,9 @@
 # Interactive Glassmorphic Docs App
 
+[![Live Demo](https://img.shields.io/badge/demo-live-emerald.svg)](https://docs-ten-pi.vercel.app/)
+
+**Live Demo**: [docs-ten-pi.vercel.app](https://docs-ten-pi.vercel.app/)
+
 A premium, interactive drag-and-drop document card manager built with React, Vite, Tailwind CSS, and Framer Motion. 
 
 This application provides a playful, high-fidelity user experience featuring fully-persisted CRUD operations, tag customization, search, sorting, markdown formatting, backup export/import, and smooth animations.
